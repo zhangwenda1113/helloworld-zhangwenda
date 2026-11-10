@@ -2,13 +2,15 @@
 
 低代码开发技术（实践）· **练习一**：用 Node.js 做一个 HelloWorld 网站，显示姓名和当前服务器时间，推送到 GitHub，再部署到 Vercel 拿到公网网址。
 
+**线上地址**：<https://helloworld-zhangwenda-ten.vercel.app>
+
 ## 一、页面效果
 
 浏览器访问后显示：
 
 > Hello World！
 > 我是 **张文达**，我的第一个 AI 开发的网站
-> 当前服务器时间：2026-11-10 16:38:05（星期二）
+> 当前服务器时间：2026-11-10 17:10:18（星期二）
 
 每次刷新都会重新读取一次服务器时间，不是写死的字符串。
 
@@ -93,11 +95,12 @@ git push -u origin main
 | 部署成功但打开是 404 或空白 | `vercel.json` 没提交上去，或 rewrite 目标写错。确认仓库根目录有 `vercel.json`，且目标为 `/api/index` |
 | 打开报 `FUNCTION_INVOCATION_FAILED` | `api/index.js` 引用的 `../lib/page` 路径不对，检查目录结构是否与上面一致 |
 | 页面时间是错的时区 | `lib/page.js` 里 `TIME_ZONE` 固定为 `Asia/Shanghai`，按北京时间显示，不受机房位置影响 |
+| 国内浏览器打不开、一直转圈 / `ERR_CONNECTION_TIMED_OUT` | `*.vercel.app` 域名在国内部分网络会被 DNS 污染（本地解析到 108.160.161.83）。这不是部署问题，换个网络（如手机流量）或开启代理即可；也可以在 Vercel 里绑定自己的域名改善访问 |
 
 ## 七、验收清单
 
-- [x] `server.js` 已在本地跑通，页面显示姓名与实时服务器时间
+- [x] `server.js` 已在本地跑通，页面显示姓名与实时服务器时间（HTTP 200，时间 2026-11-10 16:39:28）
 - [x] 代码已推送到 GitHub 公开仓库，仓库里能看到 `server.js`
-- [ ] Vercel 部署完成，公网网址可访问（待部署后勾选）
+- [x] Vercel 部署完成（状态 Ready，0% 错误率），公网地址 <https://helloworld-zhangwenda-ten.vercel.app> 页面内容正确
 
 提交内容：**Vercel 网址 + GitHub 仓库地址**。
