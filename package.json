@@ -1,0 +1,21 @@
+{
+  "name": "helloworld-zhangwenda",
+  "version": "1.0.0",
+  "private": true,
+  "description": "低代码实践·练习一：Node.js HelloWorld 网站（显示姓名与当前服务器时间）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "nodejs",
+    "helloworld",
+    "vercel",
+    "low-code"
+  ],
+  "license": "MIT"
+}
